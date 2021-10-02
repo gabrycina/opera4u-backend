@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agents",
+  "info": {
+    "name": "agent",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "artists": {
+      "via": "agent",
+      "collection": "artist",
+      "dominant": true
+    },
+    "role": {
+      "type": "string"
+    },
+    "avatar": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "bioEnglish": {
+      "type": "richtext",
+      "required": true
+    },
+    "bioGerman": {
+      "type": "richtext"
+    },
+    "bioItalian": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_articles",
+  "info": {
+    "name": "newsArticle",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "homepage": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "artists": {
+      "via": "news_articles",
+      "collection": "artist",
+      "dominant": true
+    }
+  }
+}

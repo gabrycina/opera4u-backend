@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "discographies",
+  "info": {
+    "name": "discography",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "diskLink": {
+      "type": "string",
+      "required": true
+    },
+    "diskImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "artists": {
+      "via": "discographies",
+      "collection": "artist"
+    },
+    "label": {
+      "type": "string"
+    },
+    "releaseDate": {
+      "type": "date"
+    }
+  }
+}
