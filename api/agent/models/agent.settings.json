@@ -17,7 +17,8 @@
       "required": true
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "required": true
     },
     "artists": {
       "via": "agent",
@@ -25,7 +26,8 @@
       "dominant": true
     },
     "role": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "avatar": {
       "model": "file",
@@ -39,7 +41,8 @@
     },
     "bioEnglish": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "default": "The bio was not translated in english yet."
     },
     "bioGerman": {
       "type": "richtext"

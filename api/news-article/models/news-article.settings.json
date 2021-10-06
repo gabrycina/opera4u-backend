@@ -23,12 +23,12 @@
         "images"
       ],
       "plugin": "upload",
-      "required": true,
+      "required": false,
       "pluginOptions": {}
     },
     "body": {
       "type": "richtext",
-      "required": true
+      "required": false
     },
     "date": {
       "type": "date",

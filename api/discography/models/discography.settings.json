@@ -33,7 +33,8 @@
       "collection": "artist"
     },
     "label": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "releaseDate": {
       "type": "date"
