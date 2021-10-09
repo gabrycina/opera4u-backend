@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agents",
+  "info": {
+    "name": "agent",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "artists": {
+      "via": "agent",
+      "collection": "artist",
+      "dominant": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "avatar": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "bioEnglish": {
+      "type": "richtext",
+      "required": true,
+      "default": "The bio was not translated in english yet."
+    },
+    "bioGerman": {
+      "type": "richtext"
+    },
+    "bioItalian": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artists",
+  "info": {
+    "name": "artist",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "avatar": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "agent": {
+      "via": "artists",
+      "collection": "agent"
+    },
+    "category": {
+      "via": "artists",
+      "collection": "category"
+    },
+    "gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "avatarPhotoCopyright": {
+      "type": "string",
+      "default": "Opera4u"
+    },
+    "bioGerman": {
+      "type": "richtext",
+      "required": false
+    },
+    "facebookLink": {
+      "type": "string"
+    },
+    "instagramLink": {
+      "type": "string"
+    },
+    "youtubeLink": {
+      "type": "string"
+    },
+    "discographies": {
+      "via": "artists",
+      "collection": "discography",
+      "dominant": true
+    },
+    "bioItalian": {
+      "type": "richtext"
+    },
+    "bioEnglish": {
+      "type": "richtext",
+      "required": true,
+      "default": "The bio was not translated in english yet."
+    },
+    "presses": {
+      "via": "artists",
+      "collection": "press"
+    },
+    "news_articles": {
+      "via": "artists",
+      "collection": "news-article"
+    },
+    "pdf": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "artistWebsite": {
+      "type": "string"
+    },
+    "Representation": {
+      "type": "string"
+    }
+  }
+}
