@@ -43,7 +43,7 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": true,
+      "required": false,
       "pluginOptions": {}
     },
     "avatarPhotoCopyright": {
@@ -99,6 +99,10 @@
     },
     "Representation": {
       "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
     }
   }
 }
