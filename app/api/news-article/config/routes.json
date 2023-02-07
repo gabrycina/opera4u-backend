@@ -18,7 +18,7 @@
     },
     {
       "method": "GET",
-      "path": "/news-articles/:id",
+      "path": "/news-articles/:slug",
       "handler": "news-article.findOne",
       "config": {
         "policies": []
